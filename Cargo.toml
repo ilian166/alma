@@ -1,7 +1,7 @@
 [package]
-name = "eframe_template"
+name = "trash_reviewer"
 version = "0.1.0"
-authors = ["Emil Ernerfeldt <emil.ernerfeldt@gmail.com>"]
+authors = ["L+D <>"]
 edition = "2024"
 license = "MIT OR Apache-2.0"
 include = ["LICENSE-APACHE", "LICENSE-MIT", "**/*.rs", "Cargo.toml"]
@@ -18,6 +18,10 @@ log = "0.4.27"
 
 # You only need serde if you want app persistence:
 serde = { version = "1.0.219", features = ["derive"] }
+egui_extras = { version = "0.34.2", features = ["all_loaders", "image"] }
+egui-async = "0.4.1"
+reqwest = { version = "0.13.3", features = ["json"] }
+image = { version = "0.25.10", features = ["jpeg", "png", "webp"] }
 
 # native:
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
@@ -43,8 +47,10 @@ opt-level = 2
 # eframe = { git = "https://github.com/emilk/egui", branch = "main" }
 
 # If you fork https://github.com/emilk/egui you can test with:
-# egui = { path = "../egui/crates/egui" }
+egui = { path = "../egui/crates/egui" }
 # eframe = { path = "../egui/crates/eframe" }
+egui_extras = { path = "../egui/crates/egui_extras" }
+epaint = { path = "../egui/crates/epaint" }
 
 
 # ----------------------------------------------------------------------------------------
